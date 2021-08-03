@@ -1,0 +1,6 @@
+name: KumaCore
+version: ${project.version}
+main: com.realxode.kumacore.KumaCore
+api-version: 1.17
+authors: [ RealXode ]
+description: Private core of RealXode
