@@ -10,8 +10,8 @@ public final class KumaCore extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        Bukkit.getConsoleSender().sendMessage(color("Plugin loaded.", MsgType.SUCCESSFUL));
-
+        Bukkit.getConsoleSender().sendMessage(color("Plugin cargado.", MsgType.SUCCESSFUL));
+        color("Plugin cargado.", MsgType.SUCCESSFUL);
     }
 
     @Override

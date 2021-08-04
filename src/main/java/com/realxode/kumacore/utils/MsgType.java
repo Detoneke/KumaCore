@@ -6,7 +6,6 @@ public enum MsgType {
     WARNING,
     LOADING,
     SUCCESSFUL,
-    NORMAL,
     INFO
 
 }

@@ -24,9 +24,6 @@ public class MessageManager {
             case INFO:
                 return ChatColor.translateAlternateColorCodes('&',
                         prefix + "&f&l&nINFO&8 ❘ &r" + message);
-            case NORMAL:
-                return ChatColor.translateAlternateColorCodes('&',
-                        message);
         }
         return null;
     }

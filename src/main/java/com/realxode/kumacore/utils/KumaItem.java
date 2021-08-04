@@ -6,23 +6,25 @@ import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import static com.realxode.kumacore.MessageManager.color;
 
 public class KumaItem {
 
     private final ItemStack itemStack;
-    private final ItemMeta itemMeta;
 
-    public KumaItem(String name, Material material, int amount, boolean glowing, boolean enchanted, String[] lore) {
+    public KumaItem(String name, Material material, int amount, boolean glowing, String[] lore) {
         itemStack = new ItemStack(material, amount);
-        itemMeta = itemStack.getItemMeta();
+        ItemMeta itemMeta = itemStack.getItemMeta();
         itemMeta.setDisplayName(color(name));
+        List<String> list = new ArrayList<>();
         for (String lines : lore) {
-            Arrays.asList(lore).add(color(lines));
+            list.add(color(lines));
         }
-        itemMeta.setLore(Arrays.asList(lore));
+        itemMeta.setLore(list);
 
         if (glowing) {
             itemMeta.addEnchant(Enchantment.DURABILITY, 1, false);
@@ -31,16 +33,22 @@ public class KumaItem {
         itemStack.setItemMeta(itemMeta);
     }
 
+    public KumaItem(ItemStack itemStack) {
+        this.itemStack = itemStack;
+    }
+
     public void addEnchant(Enchantment enchantment, int level) {
-        getItemStack().addUnsafeEnchantment(enchantment, level);
+        itemStack.addUnsafeEnchantment(enchantment, level);
     }
 
     public void setName(String name) {
+        ItemMeta itemMeta = itemStack.getItemMeta();
         itemMeta.setDisplayName(color(name));
         itemStack.setItemMeta(itemMeta);
     }
 
     public void setLore(String... lore) {
+        ItemMeta itemMeta = itemStack.getItemMeta();
         for (String lines : lore) {
             Arrays.asList(lore).add(color(lines));
         }
@@ -52,7 +60,12 @@ public class KumaItem {
         itemStack.setType(material);
     }
 
-    private ItemStack getItemStack() {
+    public ItemStack toItemStack() {
         return itemStack;
     }
+
+    public KumaItem clone() {
+        return new KumaItem(itemStack);
+    }
+
 }
