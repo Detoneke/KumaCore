@@ -6,7 +6,7 @@
 
     <groupId>com.realxode</groupId>
     <artifactId>KumaCore</artifactId>
-    <version>1.0.0-B3</version>
+    <version>1.0.0-B4</version>
     <packaging>jar</packaging>
 
     <name>KumaCore</name>

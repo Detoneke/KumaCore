@@ -31,5 +31,9 @@ public class MessageManager {
         return null;
     }
 
+    public static String color(String string) {
+        return ChatColor.translateAlternateColorCodes('&', string);
+    }
+
 
 }
