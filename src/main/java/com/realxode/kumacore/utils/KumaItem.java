@@ -7,7 +7,6 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import static com.realxode.kumacore.MessageManager.color;
@@ -49,7 +48,7 @@ public class KumaItem {
         ItemMeta itemMeta = itemStack.getItemMeta();
         List<String> loreL = new ArrayList<>();
         for (String lines : lore) {
-            loreL.add(lines);
+            loreL.add(color(lines));
         }
         itemMeta.setLore(loreL);
         itemStack.setItemMeta(itemMeta);
