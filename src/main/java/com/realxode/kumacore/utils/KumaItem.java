@@ -44,7 +44,7 @@ public class KumaItem {
         return this;
     }
 
-    public KumaItem setLore(String... lore) {
+    public KumaItem setLore(String[] lore) {
         ItemMeta itemMeta = itemStack.getItemMeta();
         List<String> loreL = new ArrayList<>();
         for (String lines : lore) {
